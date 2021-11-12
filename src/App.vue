@@ -1,14 +1,19 @@
 <template>
   <Header title="SLINK"/>
+  <Input />
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Input from './components/Input/Input.vue'
+
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Input,
+
   }
 }
 </script>
@@ -21,5 +26,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin: 0;
+  background: #eee;
 }
 </style>
