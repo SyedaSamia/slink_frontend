@@ -1,6 +1,6 @@
 <template>
+  <Header title="SLINK"/>
   <div class="container">
-    <Header title="SLINK"/>
     <Input />
   </div>
 </template>
