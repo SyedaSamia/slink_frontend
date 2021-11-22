@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="header">
     <h1>{{ title }}</h1>
     <p>
       Get your Shortened Link AKA *SLINK* !
@@ -20,7 +20,7 @@ export default {
 <style scoped>
 header {
   display: block;
-  align-items: center;
+  align-content: center;
   margin-bottom: 30px;
 }
 </style>
