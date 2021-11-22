@@ -1,26 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>{{ title }}</h1>
-    <p>
-      Get your Shortened Link AKA *SLINK* !
-    </p>
-  </div>
+    <q-header bordered class="bg-primary text-white">
+      <q-toolbar>
+        <q-toolbar-title>
+          SLINK
+        </q-toolbar-title>
+        <q-tooltip>
+            fs
+        </q-tooltip>
+      </q-toolbar>
+    </q-header>
 </template>
 
 <script>
 export default {
-  name: 'Header',
-  props: {
-    title: String
-  }
+    name: 'Header',
+
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-header {
-  display: block;
-  align-items: center;
-  margin-bottom: 30px;
-}
+<style>
+
 </style>
