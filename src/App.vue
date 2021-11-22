@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <Header/>
+    <Header title="SLINK"/>
     <q-page-container>
       <div class="q-py-lg">
         <Input />
