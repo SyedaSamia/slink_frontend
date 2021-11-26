@@ -4,7 +4,11 @@
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
-          <Input />
+          <div class="row justify-center">
+        <div class="col-6">
+            <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url"/>
+          </div>
+        </div>
           <div class="q-py-lg">
             <div class="row justify-center">
             <q-btn type="submit" color="primary" label="Get SLINK" />
@@ -25,7 +29,6 @@
 <script>
 import { ref } from 'vue'
 import Header from './components/Header.vue'
-import Input from './components/Input.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 
@@ -35,7 +38,6 @@ export default {
   name: 'App',
   components: {
     Header,
-    Input,
     Output,
   },
   data() {
