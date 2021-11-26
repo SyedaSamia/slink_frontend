@@ -56,8 +56,10 @@ export default {
           const headers = {
 
      "Access-Control-Allow-Origin": "*",
+     "Access-Control-Allow-Methods" : "POST",
+     "Access-Control-Allow-Headers": "Content-Type",
      "Access-Control-Request-Method" : "POST",
-     "Access-Control-Request-Headers": "Content-Type",
+     "Access-Control-Request-Headers": "Content-Type"
      //"Content-Type": "application/json",
   };
           const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
