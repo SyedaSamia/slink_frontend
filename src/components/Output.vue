@@ -15,7 +15,7 @@ export default {
     name: 'Output',
     props: {
         slink: URL,
-        shortUrl: String
+        shortUrl: URL
 
     },
 

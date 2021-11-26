@@ -3,9 +3,17 @@
     <Header title="SLINK"/>
     <q-page-container>
       <div class="q-py-lg">
-        <Input />
-        <Button :onClick="onClick"/>
-        <Output :shortUrl="output"/>
+        <q-form @submit.prevent="submit(longUrl)">
+          <Input />
+          <div class="q-py-lg">
+            <div class="row justify-center">
+            <q-btn type="submit" color="primary" label="Get SLINK" />
+         </div>
+            </div>
+
+        </q-form>
+
+        <Output :shortUrl="shortUrl"/>
 
       </div>
 
@@ -18,8 +26,9 @@
 import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Input from './components/Input.vue'
-import Button from './components/Button.vue'
 import Output from './components/Output.vue'
+import axios from 'axios'
+
 
 
 export default {
@@ -27,22 +36,41 @@ export default {
   components: {
     Header,
     Input,
-    Button,
     Output,
   },
   data() {
         return {
             output : 'This is your short url....xxxxxxx',
+            longUrl : '',
+            shortUrl : ''
 
         }
     },
      methods: {
 
-      onClick () {
-        this.output = 'Changed output after button click'
+       submit: async function(longUrl) {
+
+        try {
+          const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
+        axios.post(api, {"longUrl": longUrl}).then(
+          response => {
+            this.shortUrl = response.data.shortUrl
+          }
+        )
+        }
+        catch(error ) {
+          console.log(error)
+        }
+
       }
 
+      // onClick () {
+      //   this.output = 'Changed output after button click'
+      // },
+
     },
+
+
 
   setup () {
     return {
