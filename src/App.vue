@@ -57,7 +57,7 @@ export default {
 
      "Access-Control-Allow-Origin": "*",
      "Access-Control-Allow-Methods" : "POST, GET",
-     "Access-Control-Allow-Headers": "Content-Type",
+     "Access-Control-Allow-Headers": "Content-Type, Authorization",
 //     "Access-Control-Request-Method" : "POST",
   //   "Access-Control-Request-Headers": "Content-Type, Authorization",
      "Content-Type": "application/json",
