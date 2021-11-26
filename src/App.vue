@@ -54,10 +54,11 @@ export default {
 
         try {
           const headers = {
-    "Content-Type": "application/jsom"
+    "Content-Type": "application/json",
+     "Access-Control-Allow-Origin": "*",
   };
           const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
-        axios.post(api, {"longUrl": longUrl}, { headers }).then(
+       await axios.post(api, {"longUrl": longUrl}, { headers }).then(
           response => {
             this.shortUrl = response.data.shortUrl
             console.log(this.shortUrl)
