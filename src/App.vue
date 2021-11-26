@@ -48,13 +48,17 @@ export default {
     },
      methods: {
 
-       submit: async function(longUrl) {
+       async submit(longUrl) {
 
         try {
+          const headers = {
+    "Content-Type": "application/jsom"
+  };
           const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
-        axios.post(api, {"longUrl": longUrl}).then(
+        axios.post(api, {"longUrl": longUrl}, { headers }).then(
           response => {
             this.shortUrl = response.data.shortUrl
+            console.log(this.shortUrl)
           }
         )
         }
