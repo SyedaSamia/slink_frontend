@@ -53,17 +53,17 @@ export default {
        async submit(longUrl) {
 
         try {
-          const headers = {
+//           const headers = {
 
-     "Access-Control-Allow-Origin": "*",
-     "Access-Control-Allow-Methods" : "POST, GET",
-     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-//     "Access-Control-Request-Method" : "POST",
-  //   "Access-Control-Request-Headers": "Content-Type, Authorization",
-     "Content-Type": "application/json",
-  };
+//      "Access-Control-Allow-Origin": "*",
+//      "Access-Control-Allow-Methods" : "POST, GET",
+//      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+// //     "Access-Control-Request-Method" : "POST",
+//   //   "Access-Control-Request-Headers": "Content-Type, Authorization",
+//      "Content-Type": "application/json",
+//   };
           const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
-       await axios.post(api, {"longUrl": longUrl}, { headers }).then(
+       await axios.post(api, {"longUrl": longUrl}).then(
           response => {
             this.shortUrl = response.data.shortUrl
             console.log(this.shortUrl)
