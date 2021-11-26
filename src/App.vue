@@ -55,7 +55,7 @@ export default {
         try {
           const headers = {
     "Content-Type": "application/json",
-     "Access-Control-Allow-Origin": "*",
+     "Access-Control-Allow-Origin": "https://slink-url-shortener.netlify.app/",
      "Access-Control-Allow-Methods" : "POST",
      "Access-Control-Allow-Headers": "Content-Type, Authorization"
   };
