@@ -55,9 +55,9 @@ export default {
         try {
           const headers = {
     "Content-Type": "application/json",
-     "Access-Control-Allow-Origin": "https://slink-url-shortener.netlify.app/",
+     "Access-Control-Allow-Origin": "*",
      "Access-Control-Allow-Methods" : "POST",
-     "Access-Control-Allow-Headers": "Content-Type, Authorization"
+     "Access-Control-Allow-Headers": "Content-Type"
   };
           const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
        await axios.post(api, {"longUrl": longUrl}, { headers }).then(
