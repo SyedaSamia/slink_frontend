@@ -64,7 +64,7 @@ data() {
     },
      methods: {
 
-       onclick () {
+       btnDelete () {
          this.longUrl = ''
        },
 

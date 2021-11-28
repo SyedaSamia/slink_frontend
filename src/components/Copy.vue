@@ -1,5 +1,5 @@
 <template>
-  <q-btn round color="primary" icon="copy" v-model="onClick" size="10px"></q-btn>
+  <q-btn round color="primary" icon="copy" v-model="onClick" size="sm"></q-btn>
 </template>
 
 <script>
