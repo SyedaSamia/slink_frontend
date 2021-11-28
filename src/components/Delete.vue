@@ -1,5 +1,5 @@
 <template>
-  <q-btn round color="primary" icon="delete" v-model="onCLick"></q-btn>
+  <q-btn round color="primary" icon="delete" v-model="onClick" size="10px"></q-btn>
 </template>
 
 <script>

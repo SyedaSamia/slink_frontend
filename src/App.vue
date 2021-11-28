@@ -17,7 +17,10 @@
           </div>
 
         </q-form>
-        <Copy :link_name="shortUrl" :copyUrl="copyUrl" :link_url="shortUrl"/>
+        <div class="row justify-center">
+          <Output :shortUrl="shortUrl"/>
+          <Copy :onclick="copyURL"/>
+        </div>
 
 
       </div>
@@ -30,7 +33,7 @@
 <script>
 import { ref } from 'vue'
 import Header from './components/Header.vue'
-//import Output from './components/Output.vue'
+import Output from './components/Output.vue'
 import axios from 'axios'
 import Delete from './components/Delete.vue'
 import Copy from './components/Copy.vue'
@@ -46,7 +49,7 @@ export default {
   name: 'App',
   components: {
     Header,
-     //Output,
+     Output,
      Delete,
      Copy
   },

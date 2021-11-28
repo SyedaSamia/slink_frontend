@@ -1,11 +1,5 @@
 <template>
-  <li class="list-group-item">
-    <a :href="link_url"
-         class="text-dark"
-         target="_blank"
-         rel="noopener noreferrer">{{ link_name }}</a>
-    <button @click="copyUrl">copy url from a tag</button>
-  </li>
+  <q-btn round color="primary" icon="copy" v-model="onClick" size="10px"></q-btn>
 </template>
 
 <script>
@@ -13,10 +7,7 @@
 export default {
     name: 'Copy',
     props: {
-        link_url: URL,
-        link_name: String,
-        copyUrl: Function
-
+        onclick: Function
 
     },
 
