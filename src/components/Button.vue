@@ -1,5 +1,5 @@
 <template>
-  <q-btn flat rounded color="primary" label="{{ btnTitle }}" v-model="onClick"/>
+  <q-btn flat color="primary" v-model="onClick">{{ btnTitle }}</q-btn>
 </template>
 
 <script>
