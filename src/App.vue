@@ -8,7 +8,7 @@
             <div class="col-6">
               <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
             </div>
-            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete()"/>
+            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
           </div>
           <div class="q-py-lg">
             <div class="row justify-center">
@@ -17,9 +17,9 @@
           </div>
 
         </q-form>
-        <div class="row justify-center" v-if="shortUrl!=''">
+        <div class="row justify-center" v-if="output == true">
           <Output :shortUrl="shortUrl"/>
-          <Button :btnTitle="btnCopyTitle" :onclick="copyURL()"/>
+          <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
         </div>
 
 
@@ -56,7 +56,7 @@ export default {
 
 data() {
         return {
-            output : 'This is your short url....xxxxxxx',
+            output : false,
             longUrl : '',
             shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
@@ -100,7 +100,7 @@ data() {
 
     async copyURL() {
 
-      if (this.shortUrl != '')
+      if (this.output == true)
       {
         try {
 
@@ -110,6 +110,13 @@ data() {
       alert('Cannot copy');
     }
   }
+      },
+
+      showOutput () {
+        if(this.shortUrl != ''){
+          this.output = true
+        }
+
       }
 
     },
