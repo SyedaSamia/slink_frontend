@@ -17,7 +17,7 @@
           </div>
 
         </q-form>
-        <div class="row justify-center">
+        <div class="row justify-center" v-if="shortUrl!=''">
           <Output :shortUrl="shortUrl"/>
           <Button :btnTitle="btnCopyTitle" :onclick="copyURL()"/>
         </div>
@@ -98,14 +98,19 @@ data() {
 
       },
 
-      async copyURL() {
-    try {
+    async copyURL() {
+
+      if (this.shortUrl != '')
+      {
+        try {
+
       await navigator.clipboard.writeText(this.shortUrl);
       alert('Copied');
     } catch($e) {
       alert('Cannot copy');
     }
   }
+      }
 
     },
 
