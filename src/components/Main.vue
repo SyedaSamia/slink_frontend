@@ -52,7 +52,7 @@ export default {
   //   "Access-Control-Request-Headers": "Content-Type, Authorization",
      "Content-Type": "application/json",
   };
-          const api = "https://slink-urlshortener-backend.herokuapp.com/api/url/shorten/";
+          const api = "https://slnk-app.herokuapp.com/api/url/shorten/";
        await axios.post(api, {"longUrl": longUrl}, { headers }).then(
           response => {
             this.shortUrl = response.data.shortUrl
