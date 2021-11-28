@@ -8,7 +8,7 @@
             <div class="col-6">
               <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
             </div>
-            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
+            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete()"/>
           </div>
           <div class="q-py-lg">
             <div class="row justify-center">
@@ -19,7 +19,7 @@
         </q-form>
         <div class="row justify-center">
           <Output :shortUrl="shortUrl"/>
-          <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
+          <Button :btnTitle="btnCopyTitle" :onclick="copyURL()"/>
         </div>
 
 
