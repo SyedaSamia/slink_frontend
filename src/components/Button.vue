@@ -8,9 +8,10 @@ export default {
     name: 'Button',
     props: {
         btnTitle: String,
-        onclick: Function
+        onClick: Function
 
     },
+
 
 
 }
