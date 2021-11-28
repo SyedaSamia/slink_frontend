@@ -5,10 +5,10 @@
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
           <div class="row justify-center">
-        <div class="col-6">
-            <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url"/>
+            <div class="col-6">
+              <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
+            </div>
           </div>
-        </div>
           <div class="q-py-lg">
             <div class="row justify-center">
             <q-btn type="submit" color="primary" label="Get SLINK" />
@@ -43,7 +43,7 @@ export default {
   data() {
         return {
             output : 'This is your short url....xxxxxxx',
-            longUrl : 'https://www.amazon.de/-/en/dp/B08C1KN5J2/ref=gw_de_mz_en_dom_desk_atf1_qc_smp_shp_bf21_p3?pf_rd_r=FCDVYYT4D9QPY77RQ42Z&pf_rd_p=64df09d5-0b67-4616-925c-d85f66593c0f&pd_rd_r=7abd0f48-92b8-4bf9-8cf3-1ad193219bd2&pd_rd_w=5rVjl&pd_rd_wg=iDPkG&ref_=pd_gw_unk',
+            longUrl : '',
             shortUrl : ''
 
         }
