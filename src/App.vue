@@ -8,6 +8,7 @@
             <div class="col-6">
               <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
             </div>
+            <Delete :onclick="btnDelete"/>
           </div>
           <div class="q-py-lg">
             <div class="row justify-center">
@@ -16,8 +17,8 @@
           </div>
 
         </q-form>
+        <Copy :link_name="shortUrl" :copyUrl="copyUrl" :link_url="shortUrl"/>
 
-        <Output :shortUrl="shortUrl"/>
 
       </div>
 
@@ -29,17 +30,25 @@
 <script>
 import { ref } from 'vue'
 import Header from './components/Header.vue'
-import Output from './components/Output.vue'
+//import Output from './components/Output.vue'
 import axios from 'axios'
+import Delete from './components/Delete.vue'
+import Copy from './components/Copy.vue'
 
+// <div class="row justify-center">
+//           <Output :shortUrl="shortUrl"/>
+//           <Copy :onclick="btnCopy"/>
+
+//         </div>
 
 
 export default {
   name: 'App',
   components: {
     Header,
-     Output,
-
+     //Output,
+     Delete,
+     Copy
   },
 
 data() {
@@ -51,6 +60,11 @@ data() {
         }
     },
      methods: {
+
+       onclick () {
+         this.longUrl = ''
+       },
+
 
        async submit(longUrl) {
          console.log("XYZ " + longUrl)
@@ -77,11 +91,16 @@ data() {
           console.log("XYZ " + error)
         }
 
-      }
+      },
 
-      // onClick () {
-      //   this.output = 'Changed output after button click'
-      // },
+      async copyURL() {
+    try {
+      await navigator.clipboard.writeText(this.shortUrl);
+      alert('Copied');
+    } catch($e) {
+      alert('Cannot copy');
+    }
+  }
 
     },
 
