@@ -17,7 +17,7 @@
           </div>
 
         </q-form>
-        <div class="row justify-center" v-if="output == true">
+        <div class="row justify-center" v-if="shortUrl != ''">
           <Output :shortUrl="shortUrl"/>
           <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
         </div>
@@ -38,12 +38,6 @@ import axios from 'axios'
 import Button from './components/Button.vue'
 
 
-// <div class="row justify-center">
-//           <Output :shortUrl="shortUrl"/>
-//           <Copy :onclick="btnCopy"/>
-
-//         </div>
-
 
 export default {
   name: 'App',
@@ -56,7 +50,6 @@ export default {
 
 data() {
         return {
-            output : false,
             longUrl : '',
             shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
@@ -100,7 +93,7 @@ data() {
 
     async copyURL() {
 
-      if (this.output == true)
+      if (this.shortUrl != '')
       {
         try {
 
@@ -111,13 +104,6 @@ data() {
     }
   }
       },
-
-      showOutput () {
-        if(this.shortUrl != ''){
-          this.output = true
-        }
-
-      }
 
     },
 
