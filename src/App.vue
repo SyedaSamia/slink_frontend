@@ -8,7 +8,7 @@
             <div class="col-6">
               <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
             </div>
-            <Delete :onclick="btnDelete"/>
+            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
           </div>
           <div class="q-py-lg">
             <div class="row justify-center">
@@ -19,7 +19,7 @@
         </q-form>
         <div class="row justify-center">
           <Output :shortUrl="shortUrl"/>
-          <Copy :onclick="copyURL"/>
+          <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
         </div>
 
 
@@ -35,8 +35,8 @@ import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
-import Delete from './components/Delete.vue'
-import Copy from './components/Copy.vue'
+import Button from './components/Button.vue'
+
 
 // <div class="row justify-center">
 //           <Output :shortUrl="shortUrl"/>
@@ -50,15 +50,17 @@ export default {
   components: {
     Header,
      Output,
-     Delete,
-     Copy
+     Button,
+
   },
 
 data() {
         return {
             output : 'This is your short url....xxxxxxx',
             longUrl : '',
-            shortUrl : ''
+            shortUrl : '',
+            btnCopyTitle: 'Copy To clipboard',
+            btnDeleteTitle: 'Delete'
 
         }
     },
