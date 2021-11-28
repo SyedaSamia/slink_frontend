@@ -53,7 +53,11 @@ data() {
             longUrl : '',
             shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
-            btnDeleteTitle: 'Delete'
+            btnDeleteTitle: 'Delete',
+            longUrlEntryCount: '',
+            shortUrlRedirectedCount: '',
+            dateCreated: ''
+
 
         }
     },
@@ -61,6 +65,7 @@ data() {
 
        btnDelete () {
          this.longUrl = ''
+         this.shortUrl = ''
        },
 
 
@@ -73,14 +78,15 @@ data() {
      "Access-Control-Allow-Origin": "*",
      "Access-Control-Allow-Methods" : "POST, GET",
      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-//     "Access-Control-Request-Method" : "POST",
-  //   "Access-Control-Request-Headers": "Content-Type, Authorization",
      "Content-Type": "application/json",
   };
           const api = "https://slnk-app.herokuapp.com/api/url/shorten/";
        await axios.post(api, {"longUrl": longUrl}, { headers }).then(
           response => {
             this.shortUrl = response.data.shortUrl
+            this.longUrlEntryCount = response.data.longUrlEntryCount
+            this.shortUrlRedirectedCount = response.data.shortUrlRedirectCount
+            this.dateCreated = response.dateCreated
             console.log(this.shortUrl)
           }
         )
