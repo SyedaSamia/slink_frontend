@@ -20,12 +20,17 @@
         </q-form>
 
       </div>
-        <div class="row justify-center" v-if="urlExist == true">
-          <v-text-field >
+      <div class="col" v-if="urlExist == true">
+        <div class="row justify-center">
+          <div>
+            <v-text-field >
                 <div style="color: rgb(102, 65, 65)" class="self-center full-width no-outline">This is a Slink! Please enter a long URL!</div>
            </v-text-field>
-           <Button :btnTitle="`Restart`" :onClick="btnDelete"/>
+          </div>
         </div>
+        <Button :btnTitle="`Restart`" :onClick="btnDelete"/>
+      </div>
+
         <div class="column" v-if="shortUrl != ''&& urlExist == false">
 
           <div class="q-mb-xl">
