@@ -6,12 +6,13 @@
 </template>
 
 <script>
-import ApexCharts from 'apexcharts'
+
 export default {
     name: 'Statistics',
-    data:  {
 
-          series: [70],
+    data() {
+        return{
+            series: [70],
           chartOptions: {
             chart: {
               height: 350,
@@ -20,21 +21,19 @@ export default {
             plotOptions: {
               radialBar: {
                 hollow: {
-                  size: '100%',
+                  size: '70%',
                 }
               },
             },
             labels: ['Cricket'],
           },
 
+        }
 
-        },
 
-      }
+    },
+
 
 }
 </script>
 
-<style>
-
-</style>
