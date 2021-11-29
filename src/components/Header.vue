@@ -1,5 +1,8 @@
 <template>
     <q-header bordered class="bg-primary text-white">
+      <q-avatar>
+            <img src="https://thenounproject.com/term/code/955055">
+          </q-avatar>
       <q-toolbar>
         <q-toolbar-title>
           {{ title }}
