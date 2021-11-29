@@ -22,9 +22,10 @@
           <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
         </div>
       </div>
-
-      <Statistics color="light-blue" :statValue="`Total Click: ${this.shortUrlRedirectedCount}`"/>
-      <Statistics color="accent" :statValue="`Entry: ${this.longUrlEntryCount}`"/>
+       <div class="q-pa-md flex flex-center">
+         <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
+         <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
+       </div>
 
     </q-page-container>
   </q-layout>
