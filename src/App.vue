@@ -25,8 +25,9 @@
           <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
              <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
-           </div>
+          </div>
         </div>
+        <v-chart class="chart" :option="option" />
       </div>
 
 
@@ -36,14 +37,34 @@
 
 
 <script>
-import { ref } from 'vue'
+//import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 import Button from './components/Button.vue'
 import Statistics from './components/Statistics.vue'
 
+//* Import for chart
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import { PieChart } from "echarts/charts";
+import {
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent
+} from "echarts/components";
+import VChart, { THEME_KEY } from "vue-echarts";
+import { ref, defineComponent } from "vue";
 
+use([
+  CanvasRenderer,
+  PieChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent
+]);
+
+//* Import for chart
 
 export default {
   name: 'App',
@@ -52,6 +73,10 @@ export default {
      Output,
      Button,
      Statistics,
+     VChart
+  },
+  provide: {
+    [THEME_KEY]: "dark"
   },
 
 data() {
@@ -120,9 +145,43 @@ data() {
     },
 
   setup () {
-    return {
-      leftDrawerOpen: ref(false)
-    }
+    const option = ref({
+      title: {
+        text: "Slink Statistics",
+        left: "center"
+      },
+      tooltip: {
+        trigger: "item",
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+      },
+      legend: {
+        orient: "vertical",
+        left: "left",
+        data: ["Total Click", "Total Entry Request"]
+      },
+      series: [
+        {
+          name: "Slink Statistics",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
+          data: [
+            { value: this.shortUrlRedirectedCount, name: "Click" },
+            { value: this.longUrlEntryCount, name: "Entry" },
+
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)"
+            }
+          }
+        }
+      ]
+    });
+    return {  leftDrawerOpen: ref(false), option }
+
   }
 }
 </script>
