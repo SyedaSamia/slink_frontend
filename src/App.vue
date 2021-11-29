@@ -1,23 +1,22 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <div class="q-pa-md">
-      <q-space />
-      <q-img style="height: 100px; max-width: 100px" alt="Slink logo" src="./assets/slink-logos/slink-logos.jpeg"/>
-    </div>
+    <Header :title="`Shortened-Link for Boring Long Link!`"/>
+    <q-separator inset color="#F29765" />
     <q-page-container>
+      <q-space />
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
 
           <div class="row justify-center">
+
               <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-              <div class="col">
-                <q-space />
-              </div>
-              <div class="col">
-                <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
-              </div>
+
+
+
+              <q-btn icon="delete" size="sm" style="{ color: #F29765 }" @click="btnDelete"/>
+
 
           </div>
 
@@ -27,6 +26,7 @@
             </div>
           </div>
         </q-form>
+
 
 
 
@@ -45,7 +45,8 @@
             </div>
           </div>
 
-          <q-separator inset color="#F29765" />
+          <q-space />
+          <q-space />
 
           <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
@@ -65,7 +66,7 @@
 
 <script>
 import { ref } from 'vue'
-//import Header from './components/Header.vue'
+import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 //import Button from './components/Button.vue'
@@ -74,7 +75,7 @@ import Statistics from './components/Statistics.vue'
 export default {
   name: 'App',
   components: {
-    //Header,
+    Header,
      Output,
     // Button,
      Statistics,

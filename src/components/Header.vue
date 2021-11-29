@@ -1,26 +1,18 @@
 <template>
-    <q-header bordered class="bg-primary text-white">
-      <div class = 'row'>
-        <div class="col">
-          <q-avatar>
+<div class="q-pa-md">
+    <q-toolbar class="bg-white text-brand">
 
-          </q-avatar>
+      <q-img style="height: 100px; max-width: 100px" alt="Slink logo" src="../assets/slink-logos/slink-logos.jpeg"/>
 
-        </div>
-        <div class="col">
-          <q-toolbar>
-           <q-toolbar-title>
-             {{ title }}
-            </q-toolbar-title>
-           <q-tooltip>
-            fs
-            </q-tooltip>
-          </q-toolbar>
-        </div>
 
-      </div>
+      <q-toolbar-title> {{ title }}</q-toolbar-title>
 
-    </q-header>
+
+    </q-toolbar>
+  </div>
+
+
+
 </template>
 
 <script>
@@ -34,5 +26,9 @@ export default {
 </script>
 
 <style>
+
+.text-brand {
+  color: #F29765 !important;
+}
 
 </style>
