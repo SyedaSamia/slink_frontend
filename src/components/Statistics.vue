@@ -3,6 +3,7 @@
     <q-circular-progress
       show-value
       class="text-light-blue q-ma-md"
+      value="100"
       size="50px"
       color="primary"
     >

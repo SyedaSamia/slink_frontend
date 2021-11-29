@@ -20,12 +20,14 @@
         <div class="row justify-center" v-if="shortUrl != ''">
           <Output :shortUrl="shortUrl"/>
           <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
+
+          <div class="q-pa-md flex flex-center">
+            <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
+             <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
+           </div>
         </div>
       </div>
-       <div class="q-pa-md flex flex-center">
-         <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
-         <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
-       </div>
+
 
     </q-page-container>
   </q-layout>
