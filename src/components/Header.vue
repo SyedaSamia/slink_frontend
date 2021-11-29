@@ -3,7 +3,7 @@
       <div class = 'row'>
         <div class="col">
           <q-avatar>
-            <img src="./assets/slink-logos/slink-logos.jpeg">
+
           </q-avatar>
 
         </div>
