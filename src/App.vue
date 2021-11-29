@@ -20,7 +20,13 @@
         </q-form>
 
       </div>
-        <div class="column" v-if="shortUrl != ''">
+        <div class="row justify-center" v-if="urlExist == true">
+          <v-text-field >
+                <div style="color: rgb(102, 65, 65)" class="self-center full-width no-outline">This is a Slink! Please enter a long URL!</div>
+           </v-text-field>
+           <Button :btnTitle="`Restart`" :onClick="btnDelete"/>
+        </div>
+        <div class="column" v-if="shortUrl != ''&& urlExist == false">
 
           <div class="q-mb-xl">
             <div class="row justify-center">
@@ -76,7 +82,8 @@ data() {
             btnDeleteTitle: 'Delete',
             longUrlEntryCount: '',
             shortUrlRedirectedCount: '',
-            dateCreated: ''
+            dateCreated: '',
+            urlExist: false
 
 
         }
@@ -86,13 +93,19 @@ data() {
        btnDelete () {
          this.longUrl = ''
          this.shortUrl = ''
+         this.urlExist = false
        },
 
 
        async submit(longUrl) {
          console.log("XYZ " + longUrl)
+         var res = longUrl.match(/(http(s)?:\/\/.)?(www\.)?(s\-lnk\.herokuapp\.com\/*)?/g);
 
-        try {
+         if(res){
+           this.urlExist = true
+         }
+         else {
+           try {
           const headers = {
 
      "Access-Control-Allow-Origin": "*",
@@ -114,6 +127,9 @@ data() {
         catch(error ) {
           console.log("XYZ " + error)
         }
+         }
+
+
 
       },
 

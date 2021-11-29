@@ -2,7 +2,7 @@
   <div class="row justify-center">
 
       <div class="q-py-md q-pr-md">
-           <v-text-field color="" >
+           <v-text-field>
                 <div style="color: rgb(102, 65, 65)" class="self-center full-width no-outline">Your Slink</div>
            </v-text-field>
       </div>
