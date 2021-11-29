@@ -9,11 +9,11 @@
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
           <div class="row justify-center">
-              <div class="col-4">
+              <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-              <div class="col-4"></div>
-              <div class="col-4">
+              <div class="col"></div>
+              <div class="col">
                 <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
               </div>
           </div>
@@ -25,18 +25,20 @@
           </div>
         </q-form>
 
+
+
         <div class="column" v-if="shortUrl != ''">
+
           <div class="row justify-center">
-            <div class="q-pa-md doc-container">
-              <div class="row items-start" >
+            <div class="col-6">
+              <div class="q-py-lg">
                 <Output :shortUrl="shortUrl"/>
               </div>
-              <div class="row items-end" >
-                <q-btn icon="copy" @click="copyURL"/>
-
+              <div class="q-py-lg">
+                <q-btn icon="copy" @click="copyURL"/>>
               </div>
-            </div>
           </div>
+        </div>
 
           <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
