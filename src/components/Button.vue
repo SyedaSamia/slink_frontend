@@ -1,5 +1,5 @@
 <template>
-  <q-btn flat style="color: #F29765" @click="onClick" v-bind:title="btnTitle"/>
+  <q-btn flat style="background: white; color: #F29765" @click="onClick">{{ btnTitle }}</q-btn>
 </template>
 
 <script>
@@ -16,12 +16,4 @@ export default {
 
 }
 </script>
-<style scoped>
-.text-brand {
-  color: #F6F6F7 !important;
-}
-.bg-brand {
-  background: #F29765 !important;
-}
 
-</style>
