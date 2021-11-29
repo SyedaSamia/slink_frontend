@@ -12,10 +12,7 @@
               <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-
-
-
-              <q-btn icon="delete" size="sm" style="{ color: #F29765 }" @click="btnDelete"/>
+              <Button :btnTitle="`Delete`" :onClick="btnDelete"/>
 
 
           </div>
@@ -40,7 +37,7 @@
             </div>
 
             <div class="col">
-              <q-btn icon="copy" @click="copyURL"/>>
+              <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
 
             </div>
           </div>
@@ -69,16 +66,18 @@ import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
-//import Button from './components/Button.vue'
+import Button from './components/Button.vue'
 import Statistics from './components/Statistics.vue'
+
 
 export default {
   name: 'App',
   components: {
     Header,
-     Output,
-    // Button,
-     Statistics,
+    Output,
+    Button,
+    Statistics
+
   },
 
 data() {

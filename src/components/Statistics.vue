@@ -2,10 +2,10 @@
 
     <q-circular-progress
       show-value
-      class="text-light-blue q-ma-md"
+      class="text-brand q-ma-md"
       value="100"
       size="200px"
-      color="brand"
+      color="#F29765"
       font-size="12px"
     >
     {{ statValue }}
@@ -29,10 +29,8 @@ export default {
 
 <style scoped>
 .text-brand {
-  color: #F6F6F7 !important;
+  color: #F29765 !important;
 }
-.bg-brand {
-  background: #F29765 !important;
-}
+
 
 </style>

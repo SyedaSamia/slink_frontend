@@ -1,5 +1,5 @@
 <template>
-  <q-btn flat color="brand" @click="onClick">{{ btnTitle }}</q-btn>
+  <q-btn flat style="color: #F29765" @click="onClick" v-bind:title="btnTitle"/>
 </template>
 
 <script>
