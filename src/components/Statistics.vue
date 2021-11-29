@@ -4,8 +4,9 @@
       show-value
       class="text-light-blue q-ma-md"
       value="100"
-      size="100px"
+      size="200px"
       color="primary"
+      font-size="12px"
     >
     {{ statValue }}
     </q-circular-progress>

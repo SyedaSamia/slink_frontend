@@ -1,18 +1,18 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <Header title="SLINK"/>
+    <img alt="Slink logo" src="./assets/slink-logos/slink-logos_black.png">
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
-          <div class="q-pa-md doc-container">
-            <div class="row justify-center">
+          <div class="row justify-center">
+            <div class="q-pa-md doc-container">
+
               <div class="col items-start">
                 <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
               <div class="column items-end">
                 <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
               </div>
-
             </div>
           </div>
 
@@ -25,11 +25,13 @@
 
         <div class="column" v-if="shortUrl != ''">
           <div class="row justify-center">
-            <div class="column items-start" >
-              <Output :shortUrl="shortUrl"/>
-            </div>
-            <div class="column items-end" >
-              <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
+            <div class="q-pa-md doc-container">
+              <div class="column items-start" >
+                <Output :shortUrl="shortUrl"/>
+              </div>
+              <div class="column items-end" >
+                <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
+              </div>
             </div>
           </div>
 
@@ -51,7 +53,7 @@
 
 <script>
 import { ref } from 'vue'
-import Header from './components/Header.vue'
+//import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 import Button from './components/Button.vue'
@@ -60,7 +62,7 @@ import Statistics from './components/Statistics.vue'
 export default {
   name: 'App',
   components: {
-    Header,
+    //Header,
      Output,
      Button,
      Statistics,
