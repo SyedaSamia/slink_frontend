@@ -1,9 +1,11 @@
 <template>
   <div class="row justify-center">
       <div class="col-6">
-          <div class="q-py-lg">
-              <v-text-field v-model="value">{{ shortUrl }}</v-text-field>
-          </div>
+           <q-field standout label="Standout" stack-label>
+                <template v-slot:control>
+                     <div class="self-center full-width no-outline" tabindex="0">{{ shortUrl }}</div>
+                  </template>
+             </q-field>
 
       </div>
   </div>

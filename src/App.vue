@@ -3,9 +3,8 @@
     <Header :title="`Shortened-Link for Boring Long Link!`"/>
     <q-separator inset color="#F29765" />
     <q-page-container>
-      <div class="q-py-lg">
+      <div class="q-py-xl">
         <q-form @submit.prevent="submit(longUrl)">
-          <q-space />
           <div class="row justify-center">
               <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
@@ -23,12 +22,14 @@
 
         <div class="column" v-if="shortUrl != ''">
 
-          <div class="row justify-center">
+          <div class="q-mb-xl">
+            <div class="row justify-center">
             <Output :shortUrl="shortUrl"/>
             <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
           </div>
+          </div>
 
-          <div class="q-pt-xl">
+          <div class="q-py-xl">
              <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
             <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>

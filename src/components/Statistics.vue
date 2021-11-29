@@ -2,7 +2,7 @@
 
     <q-circular-progress
       show-value
-      class="text-light-orange q-ma-md"
+      class="text-light-blue q-ma-md q-mx-md"
       value="100"
       size="200px"
       color="#F29765"
