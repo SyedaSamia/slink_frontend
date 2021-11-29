@@ -22,7 +22,7 @@
 
           <div class="q-py-lg">
             <div class="row justify-center">
-                <q-btn type="submit" color="primary" label="Get SLINK" />
+                <q-btn type="submit" color="brand" label="Get SLINK" />
             </div>
           </div>
         </q-form>
