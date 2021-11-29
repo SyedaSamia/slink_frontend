@@ -10,10 +10,10 @@
 
           <div class="q-pa-md doc-container">
             <div class="row justify-center">
-              <div class="col">
+              <div class="col-8">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-              <div class="col">
+              <div class="col-4">
                 <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
               </div>
             </div>

@@ -16,3 +16,12 @@ export default {
 
 }
 </script>
+<style scoped>
+.text-brand {
+  color: #F6F6F7 !important;
+}
+.bg-brand {
+  background: #F29765 !important;
+}
+
+</style>

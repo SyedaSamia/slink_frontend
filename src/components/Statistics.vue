@@ -5,7 +5,7 @@
       class="text-light-blue q-ma-md"
       value="100"
       size="200px"
-      color="primary"
+      color="brand"
       font-size="12px"
     >
     {{ statValue }}
@@ -27,3 +27,12 @@ export default {
 }
 </script>
 
+<style scoped>
+.text-brand {
+  color: #F6F6F7 !important;
+}
+.bg-brand {
+  background: #F29765 !important;
+}
+
+</style>
