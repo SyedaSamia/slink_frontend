@@ -78,7 +78,7 @@ export default {
 
 data() {
         return {
-            longUrl : 'https://quasar.dev/vue-components/responsive',
+            longUrl : '',
             shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
             btnDeleteTitle: 'Delete',
@@ -104,7 +104,6 @@ data() {
          var res = longUrl.includes(slink);
 
          if(res){
-           console.log("XYZ" + res)
            this.urlExist = true
          }
          else {
