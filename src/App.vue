@@ -1,5 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
+    <q-space />
     <div class="row justify-center">
       <q-img style="height: 100px; max-width: 100px" alt="Slink logo" src="./assets/slink-logos/slink-logos.jpeg"/>
     </div>
@@ -8,9 +9,9 @@
         <q-form @submit.prevent="submit(longUrl)">
 
           <div class="q-pa-md doc-container">
-            <div class="row items-center">
+            <div class="row justify-center">
               <div class="col">
-                <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
+                <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
               <div class="col">
                 <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
@@ -29,11 +30,11 @@
         <div class="column" v-if="shortUrl != ''">
           <div class="row justify-center">
             <div class="q-pa-md doc-container">
-              <div class="column items-start" >
+              <div class="row items-start" >
                 <Output :shortUrl="shortUrl"/>
               </div>
-              <div class="column items-end" >
-                <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
+              <div class="row items-end" >
+                <q-icon class="fas fa-copy" @click="copyURL" color="brand"/>
               </div>
             </div>
           </div>
