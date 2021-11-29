@@ -4,7 +4,7 @@
       show-value
       class="text-light-blue q-ma-md"
       value="100"
-      size="50px"
+      size="100px"
       color="primary"
     >
     {{ statValue }}
