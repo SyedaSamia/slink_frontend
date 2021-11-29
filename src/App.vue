@@ -21,9 +21,10 @@
           <Output :shortUrl="shortUrl"/>
           <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
         </div>
-
-
       </div>
+
+      <Statistics />
+      <Statistics />
 
     </q-page-container>
   </q-layout>
@@ -36,6 +37,7 @@ import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 import Button from './components/Button.vue'
+import Statistics from './components/Statistics.vue'
 
 
 
@@ -45,7 +47,7 @@ export default {
     Header,
      Output,
      Button,
-
+     Statistics,
   },
 
 data() {
@@ -80,7 +82,7 @@ data() {
      "Access-Control-Allow-Headers": "Content-Type, Authorization",
      "Content-Type": "application/json",
   };
-          const api = "https://slnk-app.herokuapp.com/api/url/shorten/";
+          const api = "https://s-lnk.herokuapp.com/api/url/shorten/";
        await axios.post(api, {"longUrl": longUrl}, { headers }).then(
           response => {
             this.shortUrl = response.data.shortUrl
