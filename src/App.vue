@@ -1,6 +1,8 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <img alt="Slink logo" src="./assets/slink-logos/slink-logos_black.png">
+    <div class="row justify-center">
+      <img style="height: 50px; max-width: 50px" alt="Slink logo" src="./assets/slink-logos/slink-logos_black.png">
+    </div>
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
@@ -140,4 +142,14 @@ data() {
   }
 }
 </script>
+
+<style scoped>
+.text-brand {
+  color: #F6F6F7 !important;
+}
+.bg-brand {
+  background: #F29765 !important;
+}
+
+</style>
 
