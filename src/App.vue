@@ -71,7 +71,7 @@ export default {
 data() {
         return {
             longUrl : '',
-            shortUrl : 'https://s-lnk.herokuapp.com/yzzWMDGYp',
+            shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
             btnDeleteTitle: 'Delete',
             longUrlEntryCount: '',
