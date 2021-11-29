@@ -2,7 +2,7 @@
 
     <q-circular-progress
       show-value
-      class="text-brand q-ma-md"
+      class="text-#F29765 q-ma-md"
       value="100"
       size="200px"
       color="#F29765"
@@ -27,10 +27,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.text-brand {
-  color: #F29765 !important;
-}
-
-
-</style>

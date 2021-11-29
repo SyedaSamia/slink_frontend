@@ -30,16 +30,8 @@
         <div class="column" v-if="shortUrl != ''">
 
           <div class="row justify-center">
-            <div class="col-8">
-              <div class="q-py-lg">
-                <Output :shortUrl="shortUrl"/>
-              </div>
-            </div>
-
-            <div class="col">
-              <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
-
-            </div>
+            <Output :shortUrl="shortUrl"/>
+            <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
           </div>
 
           <q-space />
