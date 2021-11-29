@@ -19,14 +19,14 @@
           </div>
         </q-form>
 
-
+      </div>
         <div class="column" v-if="shortUrl != ''">
 
           <div class="q-mb-xl">
             <div class="row justify-center">
             <Output :shortUrl="shortUrl"/>
             <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
-          </div>
+            </div>
           </div>
 
           <div class="q-py-xl">
@@ -41,7 +41,7 @@
         </div>
 
 
-      </div>
+
 
 
     </q-page-container>
@@ -71,7 +71,7 @@ export default {
 data() {
         return {
             longUrl : '',
-            shortUrl : '',
+            shortUrl : 'https://s-lnk.herokuapp.com/yzzWMDGYp',
             btnCopyTitle: 'Copy To clipboard',
             btnDeleteTitle: 'Delete',
             longUrlEntryCount: '',

@@ -2,11 +2,11 @@
 
     <q-circular-progress
       show-value
-      class="text-light-blue q-ma-md q-mx-md"
+      class="text-rgb(102, 65, 65) q-ma-md"
       value="100"
       size="200px"
-      color="#F29765"
-      font-size="12px"
+      color="brand"
+      font-size="15px"
     >
     {{ statValue }}
     </q-circular-progress>
@@ -26,3 +26,12 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.text-brand {
+  color: #F29765 !important;
+}
+.bg-brand {
+  background: #F29765 !important;
+}
+</style>
