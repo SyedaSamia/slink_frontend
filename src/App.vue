@@ -20,17 +20,14 @@
         </q-form>
 
       </div>
-      <div class="col" v-if="urlExist == true">
-        <div class="row justify-center">
+        <div class="row justify-center" v-if="urlExist == true">
           <div>
             <v-text-field >
                 <div style="color: rgb(102, 65, 65)" class="self-center full-width no-outline">This is a Slink! Please enter a long URL!</div>
            </v-text-field>
           </div>
+           <Button :btnTitle="`Restart`" :onClick="btnDelete"/>
         </div>
-        <Button :btnTitle="`Restart`" :onClick="btnDelete"/>
-      </div>
-
         <div class="column" v-if="shortUrl != ''&& urlExist == false">
 
           <div class="q-mb-xl">
@@ -81,7 +78,7 @@ export default {
 
 data() {
         return {
-            longUrl : '',
+            longUrl : 'https://quasar.dev/vue-components/responsive',
             shortUrl : '',
             btnCopyTitle: 'Copy To clipboard',
             btnDeleteTitle: 'Delete',
@@ -103,10 +100,11 @@ data() {
 
 
        async submit(longUrl) {
-         console.log("XYZ " + longUrl)
-         var res = longUrl.match(/(http(s)?:\/\/.)?(www\.)?(s-lnk\.herokuapp\.com\/)?/g);
+         var slink = "https://www.s-lnk.herokuapp.com/";
+         var res = longUrl.includes(slink);
 
          if(res){
+           console.log("XYZ" + res)
            this.urlExist = true
          }
          else {
