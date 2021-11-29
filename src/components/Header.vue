@@ -1,16 +1,25 @@
 <template>
     <q-header bordered class="bg-primary text-white">
-      <q-avatar>
-            <img src="./assets/slink-logos/slink-logos_transparent.png">
+      <div class = 'row'>
+        <div class="col">
+          <q-avatar>
+            <img src="./assets/slink-logos/slink-logos.jpeg">
           </q-avatar>
-      <q-toolbar>
-        <q-toolbar-title>
-          {{ title }}
-        </q-toolbar-title>
-        <q-tooltip>
+
+        </div>
+        <div class="col">
+          <q-toolbar>
+           <q-toolbar-title>
+             {{ title }}
+            </q-toolbar-title>
+           <q-tooltip>
             fs
-        </q-tooltip>
-      </q-toolbar>
+            </q-tooltip>
+          </q-toolbar>
+        </div>
+
+      </div>
+
     </q-header>
 </template>
 
