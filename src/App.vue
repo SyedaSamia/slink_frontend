@@ -23,8 +23,8 @@
         </div>
       </div>
 
-      <Statistics />
-      <Statistics />
+      <Statistics color="light-blue" :statValue="`Total Click: ${this.shortUrlRedirectedCount}`"/>
+      <Statistics color="accent" :statValue="`Entry: ${this.longUrlEntryCount}`"/>
 
     </q-page-container>
   </q-layout>
