@@ -2,7 +2,7 @@
 
     <q-circular-progress
       show-value
-      class="text-#F29765 q-ma-md"
+      class="text-light-orange q-ma-md"
       value="100"
       size="200px"
       color="#F29765"
@@ -26,4 +26,3 @@ export default {
 
 }
 </script>
-

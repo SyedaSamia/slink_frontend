@@ -28,16 +28,13 @@
             <Button :btnTitle="`Copy Link`" :onClick="copyURL"/>
           </div>
 
-          <q-card-section>
-            <q-space />
-
-          <div class="q-pa-md flex flex-center">
+          <div class="q-pt-xl">
+             <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
             <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
           </div>
 
-           <q-space />
-          </q-card-section>
+          </div>
 
 
         </div>
