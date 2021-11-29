@@ -4,31 +4,40 @@
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
-          <div class="row justify-center">
-            <div class="col-6">
-              <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
+          <div class="q-pa-md doc-container">
+            <div class="row justify-center">
+              <div class="col items-start">
+                <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
+              </div>
+              <div class="column items-end">
+                <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
+              </div>
+
             </div>
-            <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
           </div>
+
           <div class="q-py-lg">
             <div class="row justify-center">
                 <q-btn type="submit" color="primary" label="Get SLINK" />
             </div>
           </div>
-
         </q-form>
-        <div v-if="shortUrl != ''">
-          <div class="column">
-            <div class="row justify-center" >
+
+        <div class="column" v-if="shortUrl != ''">
+          <div class="row justify-center">
+            <div class="column items-start" >
               <Output :shortUrl="shortUrl"/>
+            </div>
+            <div class="column items-end" >
               <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
             </div>
-
-            <div class="q-pa-md flex flex-center">
-              <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
-              <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
-             </div>
           </div>
+
+          <div class="q-pa-md flex flex-center">
+            <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
+            <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
+          </div>
+
         </div>
 
 
