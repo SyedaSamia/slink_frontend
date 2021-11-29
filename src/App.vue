@@ -22,13 +22,12 @@
           <div class="row justify-center" >
             <Output :shortUrl="shortUrl"/>
             <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
+          </div>
 
-
-            <div class="q-pa-md flex flex-center">
+          <div class="q-pa-md flex flex-center">
               <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
               <Statistics :statValue="`Entry: ${longUrlEntryCount}`"/>
              </div>
-          </div>
         </div>
 
 

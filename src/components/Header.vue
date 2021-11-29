@@ -1,7 +1,7 @@
 <template>
     <q-header bordered class="bg-primary text-white">
       <q-avatar>
-            <img src="https://thenounproject.com/term/code/955055">
+            <img src="./assets/slink-logos/slink-logos_transparent.png">
           </q-avatar>
       <q-toolbar>
         <q-toolbar-title>
