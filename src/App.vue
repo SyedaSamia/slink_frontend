@@ -8,16 +8,14 @@
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
 
-          <div class="q-pa-md doc-container">
-            <div class="row justify-center">
+
+          <div class="row justify-center">
               <div class="col-8">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
               <div class="col-4">
-                <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
+                <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
               </div>
-            </div>
-
           </div>
 
           <div class="q-py-lg">
@@ -34,7 +32,8 @@
                 <Output :shortUrl="shortUrl"/>
               </div>
               <div class="row items-end" >
-                <q-icon class="fas fa-copy" @click="copyURL" color="brand"/>
+                <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
+
               </div>
             </div>
           </div>
