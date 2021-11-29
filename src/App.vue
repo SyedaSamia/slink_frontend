@@ -1,6 +1,5 @@
 <template>
   <q-layout view="hHh lpR fFf">
-
     <div class="q-pa-md">
       <q-space />
       <q-img style="height: 100px; max-width: 100px" alt="Slink logo" src="./assets/slink-logos/slink-logos.jpeg"/>
@@ -13,8 +12,6 @@
               <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-              <q-space/>
-
               <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
 
           </div>
@@ -31,12 +28,12 @@
         <div class="column" v-if="shortUrl != ''">
 
           <div class="row justify-center">
-            <div class="col-6">
+            <div class="col">
               <div class="q-py-lg">
                 <Output :shortUrl="shortUrl"/>
               </div>
             </div>
-            <q-space/>
+
             <div class="col">
               <div class="q-py-lg">
                 <q-btn icon="copy" @click="copyURL"/>>
