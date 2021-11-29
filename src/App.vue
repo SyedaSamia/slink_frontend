@@ -19,7 +19,8 @@
         </q-form>
         <div class="row justify-center" v-if="shortUrl != ''">
           <Output :shortUrl="shortUrl"/>
-          <Button :btnTitle="btnCopyTitle" :onclick="copyURL"/>
+          <q-icon class="fas fa-copy" @click="copyURL" color="primary"/>
+
 
           <div class="q-pa-md flex flex-center">
             <Statistics :statValue="`Total Click: ${shortUrlRedirectedCount}`"/>
