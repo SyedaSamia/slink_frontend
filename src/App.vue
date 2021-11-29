@@ -1,21 +1,22 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <div class="row justify-center">
-      <img style="height: 50px; max-width: 50px" alt="Slink logo" src="./assets/slink-logos/slink-logos_black.png">
+      <q-img style="height: 100px; max-width: 100px" alt="Slink logo" src="./assets/slink-logos/slink-logos.jpeg"/>
     </div>
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
-          <div class="row justify-center">
-            <div class="q-pa-md doc-container">
 
-              <div class="col items-start">
+          <div class="q-pa-md doc-container">
+            <div class="row items-center">
+              <div class="col">
                 <q-input color="blue" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
-              <div class="column items-end">
+              <div class="col">
                 <Button :btnTitle="btnDeleteTitle" :onclick="btnDelete"/>
               </div>
             </div>
+
           </div>
 
           <div class="q-py-lg">
