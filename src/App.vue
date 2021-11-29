@@ -99,7 +99,7 @@ data() {
 
        async submit(longUrl) {
          console.log("XYZ " + longUrl)
-         var res = longUrl.match(/(http(s)?:\/\/.)?(www\.)?(s\-lnk\.herokuapp\.com\/*)?/g);
+         var res = longUrl.match(/(http(s)?:\/\/.)?(www\.)?(s-lnk\.herokuapp\.com\/)?/g);
 
          if(res){
            this.urlExist = true
