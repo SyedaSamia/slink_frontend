@@ -8,15 +8,15 @@
     <q-page-container>
       <div class="q-py-lg">
         <q-form @submit.prevent="submit(longUrl)">
+
           <div class="row justify-center">
-            <q-space/>
               <div class="col-6">
                 <q-input color="brand" filled type="url" outlined :dense="dense" label="Enter Long Url" v-model="longUrl"/>
               </div>
               <q-space/>
-              <div class="col">
-                <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
-              </div>
+
+              <q-btn icon="delete" style="{ color: brand }" @click="btnDelete"/>
+
           </div>
 
           <div class="q-py-lg">
