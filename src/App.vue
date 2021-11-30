@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <Header :title="`Shortened-Link for Boring Long Link!`"/>
+    <Header :title="headerTitle"/>
     <q-separator inset color="#F29765" />
     <q-page-container>
       <div class="q-py-xl">
@@ -48,23 +48,19 @@
 
         </div>
 
+    </q-page-container >
 
-
-
-
-    </q-page-container>
   </q-layout>
 </template>
 
 
 <script>
-import { ref } from 'vue'
+import { ref, } from 'vue'
 import Header from './components/Header.vue'
 import Output from './components/Output.vue'
 import axios from 'axios'
 import Button from './components/Button.vue'
 import Statistics from './components/Statistics.vue'
-
 
 export default {
   name: 'App',
@@ -72,7 +68,8 @@ export default {
     Header,
     Output,
     Button,
-    Statistics
+    Statistics,
+
 
   },
 
@@ -85,7 +82,10 @@ data() {
             longUrlEntryCount: '',
             shortUrlRedirectedCount: '',
             dateCreated: '',
-            urlExist: false
+            urlExist: false,
+            feedback: '',
+            headerTitle: 'Shortened-Link for Boring Long Link!'
+
 
 
         }
@@ -98,7 +98,23 @@ data() {
          this.urlExist = false
        },
 
+       btnFeedback () {
+         this.feedbackBtnClick = true
+       },
 
+      async copyURL() {
+
+       if (this.shortUrl != '')
+       {
+        try {
+
+      await navigator.clipboard.writeText(this.shortUrl);
+      alert('Copied');
+       } catch($e) {
+      alert('Cannot copy');
+        }
+      }
+      },
        async submit(longUrl) {
          var slink = "https://www.s-lnk.herokuapp.com/";
          var res = longUrl.includes(slink);
@@ -135,25 +151,15 @@ data() {
 
       },
 
-    async copyURL() {
 
-      if (this.shortUrl != '')
-      {
-        try {
-
-      await navigator.clipboard.writeText(this.shortUrl);
-      alert('Copied');
-    } catch($e) {
-      alert('Cannot copy');
-    }
-  }
-      },
 
     },
 
   setup () {
 
-    return {  leftDrawerOpen: ref(false) }
+    return {
+      leftDrawerOpen: ref(false)
+      }
 
   }
 }
