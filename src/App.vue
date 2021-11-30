@@ -116,8 +116,8 @@ data() {
       }
       },
        async submit(longUrl) {
-         var slink = "https://www.s-lnk.herokuapp.com/";
-         var res = longUrl.includes(slink);
+         const regex = new RegExp('https?:\\/\\/(www\\.)?s-lnk.herokuapp.com\\/*');
+         var res = regex.test(longUrl);
 
          if(res){
            this.urlExist = true
@@ -143,7 +143,7 @@ data() {
         )
         }
         catch(error ) {
-          console.log("XYZ " + error)
+          console.log(error)
         }
          }
 
