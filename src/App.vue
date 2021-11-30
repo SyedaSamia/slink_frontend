@@ -123,6 +123,10 @@ data() {
            this.urlExist = true
          }
          else {
+
+           longUrl = longUrl.endsWith('/') ?
+        longUrl.slice(0, -1) : longUrl;
+
            try {
           const headers = {
 
