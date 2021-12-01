@@ -127,6 +127,8 @@ data() {
            longUrl = longUrl.endsWith('/') ?
         longUrl.slice(0, -1) : longUrl;
 
+          longUrl = longUrl.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
+
            try {
           const headers = {
 
