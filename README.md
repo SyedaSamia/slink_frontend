@@ -1,6 +1,8 @@
 # SLINK URL Shortener Frontend
 
 This is the frontend for the URL Shortener service 'Slink'. The demo is available at https://s-link.netlify.app/. 
+The implementation for the backend can be found here https://github.com/SyedaSamia/slink_backend
+
 ![Screenshot](/images/slink.png)
 
 ## Capabilities
