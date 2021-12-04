@@ -84,7 +84,8 @@ data() {
             dateCreated: '',
             urlExist: false,
             feedback: '',
-            headerTitle: 'Shortened-Link for Boring Long Link!'
+            headerTitle: 'Shortened-Link for Boring Long Link!',
+            showNullLongUrlMsg: 'Please Enter Long Url!'
 
 
 
@@ -116,7 +117,8 @@ data() {
       }
       },
        async submit(longUrl) {
-         const regex = new RegExp('https?:\\/\\/(www\\.)?s-lnk.herokuapp.com\\/*');
+         if(longUrl != ''){
+           const regex = new RegExp('https?:\\/\\/(www\\.)?s-lnk.herokuapp.com\\/*');
          var res = regex.test(longUrl);
 
          if(res){
@@ -153,6 +155,9 @@ data() {
         catch(error ) {
           console.log(error)
         }
+         }
+
+
          }
 
 
